@@ -422,6 +422,8 @@
     position: relative; z-index: 1;
     transition: opacity .3s ease;
   }
+  .media-chart.is-loaded { background: #FFFFFF; }
+  .media-chart img { object-fit: contain; }
   .js .media img { opacity: 0; }
   .js .media.is-loaded img { opacity: 1; }
   .media.is-missing img { display: none; }
@@ -743,8 +745,8 @@
       </div>
       <div>
         <article class="featured" aria-labelledby="p-co2">
-          <figure class="media">
-            <img src="images/project-3.png" alt="Visualization from the analysis of CO₂ emissions and energy use by country, 1990 to 2023" loading="lazy" decoding="async" width="1600" height="1000">
+          <figure class="media media-chart" style="aspect-ratio: 1600 / 943;">
+            <img src="images/project-3.png" alt="Bar chart titled What drove CO₂ growth, 1990–2023. For China, India, Iran, Indonesia, Saudi Arabia, South Korea, Vietnam, Turkey, Brazil and Malaysia, each bar splits the change in emissions into higher energy use and change in carbon intensity, in million tonnes." loading="lazy" decoding="async" width="1600" height="943">
             <div class="media-glyph" aria-hidden="true">
               <svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 66h112M4 4v62"/><path d="M10 56 L34 46 L52 50 L72 30 L92 24 L112 10"/></svg>
             </div>
@@ -766,10 +768,10 @@
             <p class="eyebrow">Control systems</p>
             <h3 id="p-reactor">Reactor Control System</h3>
             <p class="proj-desc">A reactor can only be controlled well once its dynamics are understood. I analyzed and modeled the control dynamics of an industrial reactor, and documented the work through a ScienceDirect paper alongside an animated NRC GIF.</p>
-            <dl class="tools"><dt>Tools</dt><dd>MATLAB / Simulink · Process Modeling</dd></dl>
+            <dl class="tools"><dt>Tools</dt><dd>MATLAB / Simulink · Process Modeling</dd><dt>Figure</dt><dd>U.S. NRC</dd></dl>
           </div>
-          <figure class="media">
-            <img src="images/project-1.gif" alt="Animated illustration accompanying the reactor control system study" loading="lazy" decoding="async" width="1600" height="1000">
+          <figure class="media media-chart" style="aspect-ratio: 4 / 3;">
+            <img src="https://www.nrc.gov/sites/default/files/doc_library/cdn/legacy/images/reading-rm/basic-ref/students/student-pwr.gif" alt="Animated diagram of a pressurized water reactor from the U.S. Nuclear Regulatory Commission" loading="lazy" decoding="async" width="800" height="600">
             <div class="media-glyph" aria-hidden="true">
               <svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="2"><rect x="40" y="8" width="40" height="56" rx="10"/><path d="M4 20h36M60 2v20M50 22h20"/></svg>
             </div>
@@ -784,8 +786,8 @@
             <p class="proj-desc">Electric vehicles can draw power from the grid and also return it. I designed and simulated a multi-level power converter system for both Vehicle-to-Grid and Grid-to-Vehicle operation, using real-time digital simulation.</p>
             <dl class="tools"><dt>Tools</dt><dd>RTDS · RSCAD · Power Systems Modeling</dd></dl>
           </div>
-          <figure class="media">
-            <img src="images/project-2.png" alt="RSCAD simulation of the V2G and G2V multi-level power converter system" loading="lazy" decoding="async" width="1600" height="1000">
+          <figure class="media" style="aspect-ratio: 1024 / 598;">
+            <img src="images/project-2.png" alt="RSCAD runtime plots from the V2G and G2V simulation: battery state of charge, converter voltages, and three-phase charging, discharging and grid waveforms" loading="lazy" decoding="async" width="1024" height="598">
             <div class="media-glyph" aria-hidden="true">
               <svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 35c10-26 20-26 30 0s20 26 30 0 20-26 30 0 16 18 22 10"/><path d="M60 4v62" stroke-dasharray="4 4"/></svg>
             </div>
