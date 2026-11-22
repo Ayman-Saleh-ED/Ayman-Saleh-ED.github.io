@@ -763,15 +763,12 @@
           </div>
         </article>
 
-        <article class="proj-row text-only" aria-labelledby="p-capstone">
+        <article class="proj-row" aria-labelledby="p-capstone">
           <div class="proj-body">
             <p class="eyebrow">Data science capstone</p>
             <h3 id="p-capstone">Process Memory &amp; Instrumentation Troubleshooting Assistant</h3>
-            <p class="proj-desc">When a process goes abnormal, past events sit as raw sensor data nobody can search, and troubleshooting steps are spread across long instrument and valve manuals. For my General Assembly Data Science Bootcamp capstone, I built a Streamlit assistant that detects faults in a simulated chemical plant, shows similar past episodes, and finds the matching manual pages with quoted, verified answers.</p>
-            <p class="proj-desc">The fault classifier is trained on the Tennessee Eastman Process, a simulated chemical plant benchmark (Rieth et al. extended dataset): 52 variables, normal operation plus 20 faults, cut into 1-hour windows with the mean, standard deviation and slope of each variable. Process Memory shows the most similar past episodes for the current window. The troubleshooting assistant runs hybrid (keyword and semantic) search over 8 instrument and valve documents, and a language model writes the answer. Every point carries a word-for-word quote, and the app checks that the quote exists on the cited page. When a fault is predicted, the app shows a red alarm banner, a chart legend, and the variables that deviate most from normal, presented as symptoms, not proven causes.</p>
-            <p class="proj-desc">Gradient boosting reached a macro F1 of 0.988 on never-seen runs (logistic regression baseline: 0.946), and 99.3% of normal windows were called normal. All 17 modelled faults were flagged in 100% of test runs, with a median detection delay of 60 minutes, the minimum possible with 1-hour windows. A neural network (MLP) on the same features tied at 0.987, so I kept gradient boosting. Testing window lengths from 10 to 60 samples showed that longer windows are more accurate but alarm later. Manual search found the right page in the top 1 for 75% of test questions with hybrid search (58% keyword only), and in the top 5 for 96% (88%). For the written answers, 93% of points passed the quote check, and 4 of 6 out-of-scope questions were correctly refused.</p>
-            <p class="proj-desc"><strong>Limitations:</strong> the data is simulated, so real plant data would be noisier. Faults 3, 9 and 15 are not detectable with these sensors and are excluded. The system detects faults after they start; it does not predict them. The quote check proves a quote exists, not that it is relevant.</p>
-            <p class="proj-desc"><strong>Next steps:</strong> CNN/RNN models on raw windows, an anomaly detector, and comparing Process Memory on raw data versus summary features.</p>
+            <p class="proj-desc">When a process goes abnormal, past events sit as raw sensor data nobody can search, and troubleshooting steps are spread across long manuals. For my General Assembly Data Science Bootcamp capstone, I built a Streamlit assistant that detects faults in a simulated chemical plant (the Tennessee Eastman Process), shows similar past episodes, and finds the matching manual pages with quoted, verified answers. Gradient boosting reached a macro F1 of 0.988 on never-seen runs, and manual search found the right page in the top 5 for 96% of test questions.</p>
+            <p class="proj-desc"><strong>Limitations:</strong> the data is simulated, faults are detected after they start rather than predicted, and three faults can’t be detected with these sensors.</p>
             <dl class="tools"><dt>Tools</dt><dd>Python · scikit-learn · pandas · NumPy · Streamlit · fastembed · Groq-hosted LLM · matplotlib · Git / GitHub</dd></dl>
             <div class="proj-actions">
               <a class="btn btn-ghost" href="https://github.com/Ayman-Saleh-ED/process_memory_assistant" target="_blank" rel="noopener noreferrer">View on GitHub <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden">(opens in a new tab)</span></a>
@@ -779,6 +776,13 @@
               <a class="btn btn-ghost" href="https://youtu.be/HCLL2lhnrFQ" target="_blank" rel="noopener noreferrer">Watch the demo video <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden">(opens in a new tab)</span></a>
             </div>
           </div>
+          <figure class="media" style="aspect-ratio: 1267 / 825;">
+            <img src="images/project-4.png" alt="Process Memory Assistant app: a Tennessee Eastman test run and a 1-hour window are selected, and a red alarm banner predicts Fault 12, condenser cooling water inlet temperature changes" loading="lazy" decoding="async" width="1267" height="825">
+            <div class="media-glyph" aria-hidden="true">
+              <svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 40h20l8-24 12 44 10-30 8 10h54"/></svg>
+            </div>
+            <figcaption class="media-label">FIG. B · Fault alarm in the Process Memory app</figcaption>
+          </figure>
         </article>
 
         <article class="proj-row" aria-labelledby="p-co2">
@@ -796,7 +800,7 @@
             <div class="media-glyph" aria-hidden="true">
               <svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 66h112M4 4v62"/><path d="M10 56 L34 46 L52 50 L72 30 L92 24 L112 10"/></svg>
             </div>
-            <figcaption class="media-label">FIG. B · CO₂ emissions and energy use, 1990–2023</figcaption>
+            <figcaption class="media-label">FIG. C · CO₂ emissions and energy use, 1990–2023</figcaption>
           </figure>
         </article>
 
@@ -812,7 +816,7 @@
             <div class="media-glyph" aria-hidden="true">
               <svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 35c10-26 20-26 30 0s20 26 30 0 20-26 30 0 16 18 22 10"/><path d="M60 4v62" stroke-dasharray="4 4"/></svg>
             </div>
-            <figcaption class="media-label">FIG. C · V2G / G2V converter simulation</figcaption>
+            <figcaption class="media-label">FIG. D · V2G / G2V converter simulation</figcaption>
           </figure>
         </article>
 
